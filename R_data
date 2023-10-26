@@ -1,1 +1,14 @@
-
+[11:06] Siddharth
+v1=c("Satchin","virat","Rohit","Dhoni")
+v2=c("Amitab","Amir","Akhya","Salman")
+v3=c("Modi","Amit","Rahul","Neheru")
+v4=c("Dehli","Chennai","Kolkata","Mumbai")
+ 
+Stars=matrix(c(v1,v2,v3,v4),nrow=4,ncol=4)
+Stars
+Conames=c("Players","Actors","Politicians","Metro City")
+Rownames=c("Record1","Record2","Record3","Record4")
+Stars=matrix(c(v1,v2,v3,v4),nrow=4,ncol=4,dimnames=list(Rownames,Conames))
+Stars
+Stars[,c("Players","Politicians")]
+Stars[3:4,]
