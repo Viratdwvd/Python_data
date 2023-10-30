@@ -1,0 +1,96 @@
+---
+title: "Untitled1112"
+author: "zxvcbn"
+date: "2023-10-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+install.packages("dplyr")
+library("dplyr")
+```
+
+```{r}
+glimpse(mtcars)
+```
+
+
+```{r}
+print(mtcars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+```{r}
+#. Display any 5 observations randomly. 
+head(mtcars)
+```
+```{r}
+#4. Display only a fraction of observations randomly.
+filter(mtcars,cyl==6)
+```
+
+
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+#Display only the MPG column. 
+select(mtcars,mpg)
+```
+
+
+```{r}
+##6. Display the variables that starts with the letter ‘d’ 
+select(mtcars,contains("d"))
+```
+
+```{r}
+#Displays data in the columns from MPG to DISP without the CYL attribute. 
+select(mtcars,mpg:disp,-cyl)
+```
+
+```{r}
+#Display all records whose HP values are more than 125 and MPG less than 15.0
+```
+
+
+```{r}
+filter(mtcars,hp>125 & mpg <15)
+```
+
+
+```{r}
+#Include a new attribute NV by adding WT and MPG together.
+```
+
+
+```{r}
+mutate(mtcars,nv=wt+mpg)
+```
+
+
+```{r}
+mtcars%>% filter(hp>125)%>%group_by(am)%>%summarise(average=mean(wt))
+```
+```{r}
+#10. Display the maximum and minimum HP value
+summarise(mtcars,max_hp=max(hp),min_hp=min(hp))
+```
+```{r}
+#11. Filter all the data with HP greater than 125 and arrange them in increasing order
+#of MPG. 
+mtcars %>% filter(hp>125)%>% arrange(mpg)
+```
+
