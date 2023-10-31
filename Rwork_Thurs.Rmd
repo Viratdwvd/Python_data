@@ -1,0 +1,107 @@
+
+
+#DATA FRAME
+my_data=data.frame(id=c(1,2,3),name=c("v","P","s"),mark=c(9,8,9))
+my_data
+
+
+c=my_data[2,3]
+c
+
+my_data$mark[c(1,3)]
+my_data$age=c(22,21,23)
+my_data
+
+
+df=data.frame(id=c(4,5,6),name=c("ci","Pi","sy"),mark=c(12,11,19))
+df
+
+my_data=rbind(df,my_data)
+my_data
+
+max_mark=max(df$mark)
+df$name[df$mark==max_mark]
+maxmark=apply(my_data,c(2),max)
+maxmark
+
+
+
+#---------------------------------------------------------------------------#
+#create dataframe
+
+survey=data.frame(id=c(1,2,3),name=c("ram","jsm","asd"),marks=c(45,45,46))
+View(survey)
+#this give structure class and typeof dataset
+str(survey)
+class(survey)
+typeof(survey)
+
+#Too get noof rows
+nrow(survey)
+
+#Too get num of attribute
+ncol(survey) 
+# gr
+dim(survey)
+
+#TOo get statical summary of dataframe
+summary(survey)
+
+
+#display col names
+colnames(survey)
+
+
+
+#top 3 rows
+head(survey,2)
+#bottom 3
+tail(survey,2)
+
+
+#one particular 
+survey$name
+survey[1]
+survey[2]
+
+
+#print 1 n 2 col
+survey[c(1,3)]
+
+
+#Too add column in dataset
+survey$Age=c(16,17,18)
+#too add record 
+survey=rbind(survey,c(4,"Sam",47,19))
+View(survey)
+
+#--------------------------------------QUESTiON--------------------------------------------#
+
+fest=data.frame(name=c("ram","sham","vir","pri","gam"),event1=c(7,8,9,6,10),event2=c(8,7,6,8,10),event3=c(8,7,2.6,8.4,1),event4=c(1,3,9,8,10))
+
+View(fest)
+
+#ROws
+
+fest[c(2,3),]
+#col
+fest$event4
+#total score
+total=fest$event1+fest$event2+fest$event3+fest$event4
+total
+#append col
+fest$t_s=total
+View(fest)
+
+#max scoer
+M=max(fest$t_s)
+fest$name[which.max(M)]
+
+#$avg score
+avg=colMeans(fest[2:6])
+avg
+fest=rbind(fest,c("avg_score",avg))
+View(fest)
+
+
+
