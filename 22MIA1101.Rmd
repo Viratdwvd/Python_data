@@ -1,0 +1,97 @@
+
+---
+title: "rakavi"
+author: "22MIA1110"
+date: "2023-11-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+install.packages("MASS")
+```
+```{r}
+library(MASS)
+```
+```{r}
+print(mtcars)
+```
+```{r}
+cov(mtcars$mpg,mtcars$hp)
+```
+```{r}
+cor(mtcars$mpg,mtcars$hp)
+```
+```{r}
+#correlation matrix
+cor(mtcars)   
+```
+```{r}
+#Data Visualisation 
+library(help="graphics")
+
+```
+
+
+```{r}
+dat=airquality
+dat
+```
+```{r}
+plot(dat$Ozone)
+```
+```{r}
+plot(dat$Ozone,dat$Wind)
+```
+
+
+```{r}
+freq = table(dat$Month)
+freq
+plot(freq)
+```
+
+```{r}
+plot(airquality)
+```
+
+```{r}
+barplot(dat$Ozone,main="Grpah",xlab="ozone",ylab="sfvsg")
+```
+
+```{r}
+hist(dat$Solar.R)
+```
+
+```{r}
+boxplot(dat$Ozone)
+#There is multiple boxPlot thing too..
+```
+
+```{r}
+#ggplot grammar of graphics
+library(ggplot2)
+```
+
+```{r}
+print(iris)
+ggplot(iris,aes(x=Sepal.Length,y=Petal.Length))+geom_point()
+ggplot(iris,aes(x=Sepal.Length,y=Petal.Length,col=Species,shape=Species))+geom_point()
+```
+```{r}
+ggplot(mtcars,mapping = aes(x=wt,y=mpg))+geom_point()
+```
+
+```{r}
+ggplot(mtcars,mapping = aes(x=wt,y=mpg))+geom_point()+geom_smooth()
+```
+
+```{r}
+ggplot(mtcars,aes(x=wt))+geom_bar()
+ggplot(mtcars,aes(x=wt))+geom_histogram()
+```
